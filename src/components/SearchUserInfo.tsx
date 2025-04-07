@@ -7,7 +7,7 @@ import './../App.css'
 function SearchUserInfo() {
     const [search, setSearch] = useState('')
     const darkmode = useAppSelector(selectDarkmode);
-    const [userQuery, {isError, isFetching, isSuccess, error, data}] = useLazySearchUsernameQuery()
+    const [userQuery, {isError, isSuccess, error, data}] = useLazySearchUsernameQuery()
     const [result, setResult] = useState<any>('')
 
     console.log('result', result)

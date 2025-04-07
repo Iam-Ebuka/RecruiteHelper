@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useAppSelector } from '../../redux-store/hooks';
 import { selectDarkmode } from '../../redux-store/slices/darkmode';
 import SearchUserInfo from './SearchUserInfo';

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import HeroSection from './components/HeroSection'
 import SearchComponent from './components/SearchComponent'

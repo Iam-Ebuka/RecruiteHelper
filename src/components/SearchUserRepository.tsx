@@ -7,7 +7,7 @@ import { GitHubUserRepo } from '../../types/responseType';
 function SearchUserRepository() {
     const [search, setSearch] = useState('')
      const darkmode = useAppSelector(selectDarkmode);
-     const [userQuery, {isError, isFetching, isSuccess, error, data}] = useLazySearchRepoQuery()
+     const [userQuery, {isError, isSuccess, error, data}] = useLazySearchRepoQuery()
      const [result, setResult] = useState<GitHubUserRepo | null>(null)
  
      console.log('result', result)
