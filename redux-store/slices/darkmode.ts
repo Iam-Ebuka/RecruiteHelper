@@ -23,4 +23,4 @@ export const { changeDarkMode } = darkmodeSlice.actions
 
 export default darkmodeSlice.reducer;
 
-export const selectDarkmode = (state: RootState) => state.darkmode
+export const selectDarkmode = (state: RootState) => state.darkmode.darkmode

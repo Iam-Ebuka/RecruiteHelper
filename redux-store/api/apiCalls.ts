@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import {GitHubUser, GitHubUserRepo} from "../../types/responseType"
 
 export const apiCalls = createApi({
     reducerPath: 'apiCalls',
@@ -6,16 +7,16 @@ export const apiCalls = createApi({
         baseUrl: 'https://api.github.com/users/'
     }),
     endpoints: (builder) => ({
-        searchUsername: builder.query({
-            query: (username: string) => {
+        searchUsername: builder.query<GitHubUser, {username: string}>({
+            query: (username) => {
                 return {
                     url: `${username}`,
                     method: 'get'
                 }
             }
         }),
-        searchRepo: builder.query({
-            query: (username: string) => {
+        searchRepo: builder.query<GitHubUserRepo, {username: string}>({
+            query: (username) => {
                 return {
                     url: `${username}/repos`,
                     method: 'get'
@@ -26,6 +27,6 @@ export const apiCalls = createApi({
 })
 
 export const {
-    useSearchUsernameQuery,
-    useSearchRepoQuery
+    useLazySearchRepoQuery,
+    useLazySearchUsernameQuery
 } = apiCalls
