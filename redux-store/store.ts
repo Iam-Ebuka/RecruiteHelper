@@ -1,12 +1,12 @@
 import {Action, ThunkAction, configureStore} from '@reduxjs/toolkit'
 import { apiCalls } from './api/apiCalls'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import darkmodeReducer from './slices/darkmode'
+import darkmodeSlice from './slices/darkmode'
 
 export const store = configureStore({
     reducer: {
         [apiCalls.reducerPath]: apiCalls.reducer,
-        darkmode: darkmodeReducer
+        darkmode: darkmodeSlice
     },
     middleware: (getDefaultMiddleware) => 
         getDefaultMiddleware().concat(apiCalls.middleware)
